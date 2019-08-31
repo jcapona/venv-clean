@@ -40,6 +40,8 @@ setup(
     keywords='python venv virtual environment env manage',
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=get_requirements('app_reqs.txt'),
+    test_suite='tests',
+    setup_requires=get_requirements('test_reqs.txt'),
     extras_require={},
     package_data={},
     data_files=[],
