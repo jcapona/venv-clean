@@ -1,1 +1,1 @@
-from venv_clean.core.manage import find_virtualenvs
+from venv_clean.core.utils import find_virtualenvs
