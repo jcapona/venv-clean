@@ -23,18 +23,12 @@ class VenvView(Frame):
                                        can_scroll=True,
                                        reduce_cpu=True,
                                        has_border=True)
-
-        self.set_theme('monochrome')
-        for key in ('selected_focus_field', 'selected_focus_control'):
-            self.palette[key] = (Screen.COLOUR_BLACK,
-                                 Screen.A_BOLD,
-                                 Screen.COLOUR_WHITE)
-
         self.selected_size = 0
         self.size_found = 0
         self.path = path
         self.venvs = self.__find_venvs(self.path)
 
+        self.set_visual_theme()
         # Top bar, logo & summary
         self.layout_top = Layout([1, 1])
         self.add_layout(self.layout_top)
@@ -111,6 +105,16 @@ class VenvView(Frame):
     @staticmethod
     def _quit():
         raise StopApplication('Bye!')
+
+    def set_visual_theme(self):
+        self.set_theme('monochrome')
+        frame_items = ('selected_focus_field',
+                       'selected_focus_control',
+                       'focus_button')
+        for key in frame_items:
+            self.palette[key] = (Screen.COLOUR_BLACK,
+                                 Screen.A_BOLD,
+                                 Screen.COLOUR_WHITE)
 
     def __find_venvs(self, path):
         self.size_found = 0
