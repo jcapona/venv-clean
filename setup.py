@@ -45,4 +45,9 @@ setup(
     extras_require={},
     package_data={},
     data_files=[],
+    entry_points={
+            'console_scripts': [
+                'venv-clean = venv_clean.__main__:main'
+            ]
+        }
 )
