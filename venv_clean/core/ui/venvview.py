@@ -1,5 +1,6 @@
 from asciimatics.widgets import Frame, Layout, Button, CheckBox, Label, \
-    Divider, Screen, TextBox, Text
+    Divider, TextBox, Text
+from asciimatics.screen import Screen
 from asciimatics.exceptions import StopApplication
 from venv_clean.core.utils import find_virtualenvs, delete_folder
 
